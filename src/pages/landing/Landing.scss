@@ -1,0 +1,23 @@
+.landing {
+  background-color: #9db2bf;
+  display: flex;
+  flex-direction: column;
+
+  .aboutme {
+    min-height: 100vh;
+  }
+
+  .education {
+    min-height: 100vh;
+    background-color: #DDE6ED;
+  }
+
+  .projects {
+    min-height: 100vh;
+  }
+
+  .contact {
+    min-height: 100vh;
+    background-color: #DDE6ED;
+  }
+}

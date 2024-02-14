@@ -1,21 +1,53 @@
 import "./Landing.scss";
-import gsap from "gsap";
-import Splash from "../splash/Splash";
-import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
-  const navigate = useNavigate("");
-
-  const handleLogoClick = () => {
-    navigate("/");
-  };
 
   return (
     <div className="landing">
-      <h1>Landing</h1>
-      <div className="logo">
-        <p onClick={handleLogoClick}>Logo</p>
-      </div>
+      <section className="aboutme">
+        <div className="aboutme-title">
+          Title
+        </div>
+        <div className="aboutme-details">
+          Details
+        </div>
+      </section>
+
+      <section className="education">
+        <div className="education-title">
+          Title
+        </div>
+        <div className="education-details">
+          Details
+        </div>
+      </section>
+
+      <section className="projects">
+        <div className="projects-title">
+          Project Title
+        </div>
+        <div className="projects-list">
+          Projects List
+        </div>
+        <div className="projects-item">
+          Projects Item
+        </div>
+        <div className="projects-item__image">
+          Projects Item Image
+        </div>
+        <div className="projects-item__description">
+          Projects Item Description
+        </div>
+      </section>
+
+      <section className="contact">
+        <div className="contact-form">
+          Contact Form
+        </div>
+        <div className="contact-details">
+          Contact Details
+        </div>
+      </section>
     </div>
   );
 };

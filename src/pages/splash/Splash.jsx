@@ -99,7 +99,7 @@ const Splash = () => {
   useEffect(() => {
     const splashScreen = document.querySelector(".splash-screen");
     const svgElements = document.querySelectorAll(".svg-class-name");
-    const revealColor = "#9DB2BF";
+    const revealColor = "#A6E3E9";
 
     const tl = gsap.timeline({
       defaults: {

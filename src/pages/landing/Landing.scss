@@ -40,6 +40,21 @@
         text-decoration: none;
         position: relative;
         display: inline-block;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 40%;
+          left: 0;
+          background-color: black;
+          transition: width 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
       }
 
       &.visible {
@@ -92,7 +107,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    min-height: 90vh;
+    min-height: 100vh;
 
     &-content-left,
     &-content-right {
@@ -150,15 +165,6 @@
     }
   }
 
-  .education {
-    min-height: 100vh;
-    background-color: #a6e3e9;
-  }
-
-  .projects {
-    min-height: 100vh;
-  }
-
   .contact {
     min-height: 100vh;
     background-color: #a6e3e9;
@@ -173,6 +179,7 @@
 .education {
   padding: 40px;
   min-height: 100vh;
+  background-color: #a6e3e9;
 
   .education-title {
     font-size: 2.5rem;

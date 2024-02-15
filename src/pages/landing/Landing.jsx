@@ -29,6 +29,15 @@ const Landing = () => {
     navigate("/");
   };
 
+  const navigateToSection = (event) => {
+    event.preventDefault();
+    const targetId = event.currentTarget.getAttribute("href").slice(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     const icons = [
       githubRef.current,
@@ -49,7 +58,6 @@ const Landing = () => {
   }, []);
 
   useEffect(() => {
-
     const handleScroll = () => {
       if (window.scrollY > 100) {
         if (!showNewNavbar) {
@@ -76,8 +84,21 @@ const Landing = () => {
       <motion.div className="progress-bar" style={{ scaleX }}></motion.div>
 
       <div className={`navbar-new ${navbarClass}`}>
-        <a href="#aboutme">About Me</a> |<a href="#education">Education</a> |
-        <a href="#projects">Projects</a> |<a href="#contact">Contact</a>
+        <a href="#aboutme" onClick={navigateToSection}>
+          About Me
+        </a>{" "}
+        |
+        <a href="#education" onClick={navigateToSection}>
+          Education
+        </a>{" "}
+        |
+        <a href="#projects" onClick={navigateToSection}>
+          Projects
+        </a>{" "}
+        |
+        <a href="#contact" onClick={navigateToSection}>
+          Contact
+        </a>
       </div>
 
       <section className="navbar">
@@ -100,7 +121,7 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="aboutme">
+      <section id="aboutme" className="aboutme">
         <div className="aboutme-content-left">
           <div className="aboutme-title">Your Name</div>
           <div className="aboutme-details">
@@ -135,7 +156,7 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="education">
+      <section id="education" className="education">
         <div className="education-title">Education</div>
         <div className="education-container">
           <div className="education-entry">
@@ -163,7 +184,7 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="projects">
+      <section id="projects" className="projects">
         <div className="projects-title">Project Title</div>
         <div className="projects-list">Projects List</div>
         <div className="projects-item">Projects Item</div>
@@ -173,12 +194,12 @@ const Landing = () => {
         </div>
       </section>
 
-      <section className="contact">
+      <section id="contact" className="contact">
         <div className="contact-form">Contact Form</div>
         <div className="contact-details">Contact Details</div>
       </section>
 
-      <section className="footer">
+      <section id="footer" className="footer">
         <div className="footer-content">
           <p>
             &copy; 2021 Your Name. All rights reserved. Designed and developed

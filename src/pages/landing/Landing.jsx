@@ -1,7 +1,12 @@
 import "./Landing.scss";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { FaGithubAlt, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaGithubAlt,
+  FaLinkedinIn,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
@@ -101,7 +106,7 @@ const Landing = () => {
             </div>
             <div ref={twitterRef}>
               <FaTwitter size="40px" className="twitter-icon" />
-            </div>            
+            </div>
           </div>
           <div className="aboutme-buttons">
             <button className="aboutme-button">Resume</button>
@@ -116,8 +121,27 @@ const Landing = () => {
       </section>
 
       <section className="education">
-        <div className="education-title">Title</div>
-        <div className="education-details">Details</div>
+        <div className="education-title">Education</div>
+        <div className="education-container">
+          <div className="education-entry">
+            <div className="college-name">College Name One</div>
+            <div className="degree">Bachelor of Science in Computer Science</div>
+            <div className="years">2015 - 2019</div>
+            <div className="description">
+              Summarize your experience or highlight any special achievements
+              during your time here.
+            </div>
+          </div>
+          <div className="education-entry">
+            <div className="college-name">College Name Two</div>
+            <div className="degree">Master of Science in Software Engineering</div>
+            <div className="years">2020 - 2022</div>
+            <div className="description">
+              Provide details about your master&rsquo;s degree, any notable projects,
+              thesis work, or academic recognitions.
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="projects">

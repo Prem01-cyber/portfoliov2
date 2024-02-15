@@ -3,11 +3,54 @@
   display: flex;
   flex-direction: column;
 
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    transform-origin: 0%;
+    background-color: #71c9ce;
+  }
+
   .navbar {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
     align-items: center;
+
+    &-new {
+      display: flex;
+      gap: 10px;
+      background-color: #71c9ce;
+      position: fixed;
+      bottom: 20px;
+      left: 60%;
+      transform: translate(-50%, 0%);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      visibility: hidden;
+      opacity: 0;
+
+      a {
+        color: black;
+        font-size: 1.2rem;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+      }
+
+      &.visible {
+        animation: slideIn 0.5s forwards;
+        visibility: visible;
+      }
+
+      &.hidden {
+        animation: slideOut 0.5s ease-out;
+      }
+    }
 
     &-logo {
       font-size: 2rem;
@@ -166,5 +209,31 @@
         color: #666;
       }
     }
+  }
+}
+
+.projects {
+  min-height: 100vh;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
   }
 }

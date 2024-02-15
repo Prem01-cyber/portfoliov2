@@ -1,6 +1,6 @@
 import "./Landing.scss";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FaGithubAlt,
   FaLinkedinIn,
@@ -8,13 +8,22 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const Landing = () => {
+  const [showNewNavbar, setShowNewNavbar] = useState(false);
+  const [navbarClass, setNavbarClass] = useState("hidden");
   const githubRef = useRef(null);
   const linkedinRef = useRef(null);
   const instagramRef = useRef(null);
   const twitterRef = useRef(null);
   const navigate = useNavigate();
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   const navigateToSplash = () => {
     navigate("/");
@@ -26,30 +35,6 @@ const Landing = () => {
       linkedinRef.current,
       instagramRef.current,
     ];
-
-    var tl = gsap.timeline();
-
-    tl.fromTo(
-      ".aboutme",
-      { autoAlpha: 0 },
-      {
-        autoAlpha: 1,
-        duration: 1,
-        ease: "power1.inOut",
-      }
-    );
-
-    tl.fromTo(
-      ".navbar",
-      { y: -50 },
-      {
-        y: 0,
-        duration: 1,
-        ease: "power1.inOut",
-      },
-      "<0.5"
-    );
-
     icons.forEach((icon) => {
       gsap.set(icon, { transformOrigin: "center" });
 
@@ -63,8 +48,38 @@ const Landing = () => {
     });
   }, []);
 
+  useEffect(() => {
+
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        if (!showNewNavbar) {
+          setShowNewNavbar(true);
+          setNavbarClass("visible");
+        }
+      } else {
+        if (showNewNavbar) {
+          setShowNewNavbar(false);
+          setNavbarClass("hidden");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showNewNavbar]);
+
   return (
     <div className="landing">
+      <motion.div className="progress-bar" style={{ scaleX }}></motion.div>
+
+      <div className={`navbar-new ${navbarClass}`}>
+        <a href="#aboutme">About Me</a> |<a href="#education">Education</a> |
+        <a href="#projects">Projects</a> |<a href="#contact">Contact</a>
+      </div>
+
       <section className="navbar">
         <div className="navbar-logo" onClick={navigateToSplash}>
           Your Name
@@ -125,7 +140,9 @@ const Landing = () => {
         <div className="education-container">
           <div className="education-entry">
             <div className="college-name">College Name One</div>
-            <div className="degree">Bachelor of Science in Computer Science</div>
+            <div className="degree">
+              Bachelor of Science in Computer Science
+            </div>
             <div className="years">2015 - 2019</div>
             <div className="description">
               Summarize your experience or highlight any special achievements
@@ -134,11 +151,13 @@ const Landing = () => {
           </div>
           <div className="education-entry">
             <div className="college-name">College Name Two</div>
-            <div className="degree">Master of Science in Software Engineering</div>
+            <div className="degree">
+              Master of Science in Software Engineering
+            </div>
             <div className="years">2020 - 2022</div>
             <div className="description">
-              Provide details about your master&rsquo;s degree, any notable projects,
-              thesis work, or academic recognitions.
+              Provide details about your master&rsquo;s degree, any notable
+              projects, thesis work, or academic recognitions.
             </div>
           </div>
         </div>
@@ -157,6 +176,15 @@ const Landing = () => {
       <section className="contact">
         <div className="contact-form">Contact Form</div>
         <div className="contact-details">Contact Details</div>
+      </section>
+
+      <section className="footer">
+        <div className="footer-content">
+          <p>
+            &copy; 2021 Your Name. All rights reserved. Designed and developed
+            by Your Name.
+          </p>
+        </div>
       </section>
     </div>
   );

@@ -99,7 +99,7 @@ const Splash = () => {
   useEffect(() => {
     const splashScreen = document.querySelector(".splash-screen");
     const svgElements = document.querySelectorAll(".svg-class-name");
-    const revealColor = "#A6E3E9";
+    const revealColor = "#e3fdfd";
 
     const tl = gsap.timeline({
       defaults: {
@@ -111,7 +111,7 @@ const Splash = () => {
           scaleX: 50,
           scaleY: 50,
           backgroundColor: revealColor,
-          ease: "power2.inOut",
+          ease: "power3.inOut",
           onComplete: () => {
             navigate("/landing");
           },

@@ -1,12 +1,19 @@
 import "./Landing.scss";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-import { FaGithubAlt, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaGithubAlt, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
   const githubRef = useRef(null);
   const linkedinRef = useRef(null);
   const instagramRef = useRef(null);
+  const twitterRef = useRef(null);
+  const navigate = useNavigate();
+
+  const navigateToSplash = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     const icons = [
@@ -14,6 +21,29 @@ const Landing = () => {
       linkedinRef.current,
       instagramRef.current,
     ];
+
+    var tl = gsap.timeline();
+
+    tl.fromTo(
+      ".aboutme",
+      { autoAlpha: 0 },
+      {
+        autoAlpha: 1,
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+
+    tl.fromTo(
+      ".navbar",
+      { y: -50 },
+      {
+        y: 0,
+        duration: 1,
+        ease: "power1.inOut",
+      },
+      "<0.5"
+    );
 
     icons.forEach((icon) => {
       gsap.set(icon, { transformOrigin: "center" });
@@ -31,7 +61,9 @@ const Landing = () => {
   return (
     <div className="landing">
       <section className="navbar">
-        <div className="navbar-logo">Your Name</div>
+        <div className="navbar-logo" onClick={navigateToSplash}>
+          Your Name
+        </div>
         <div className="navbar-links">
           <div className="navbar-link">
             <a href="#aboutme">About Me</a>
@@ -67,6 +99,9 @@ const Landing = () => {
             <div ref={instagramRef}>
               <FaInstagram size="40px" className="instagram-icon" />
             </div>
+            <div ref={twitterRef}>
+              <FaTwitter size="40px" className="twitter-icon" />
+            </div>            
           </div>
           <div className="aboutme-buttons">
             <button className="aboutme-button">Resume</button>

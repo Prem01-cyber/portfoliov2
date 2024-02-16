@@ -43,6 +43,7 @@ const Landing = () => {
       githubRef.current,
       linkedinRef.current,
       instagramRef.current,
+      twitterRef.current,
     ];
     icons.forEach((icon) => {
       gsap.set(icon, { transformOrigin: "center" });
@@ -184,19 +185,73 @@ const Landing = () => {
         </div>
       </section>
 
-      <section id="projects" className="projects">
-        <div className="projects-title">Project Title</div>
-        <div className="projects-list">Projects List</div>
-        <div className="projects-item">Projects Item</div>
-        <div className="projects-item__image">Projects Item Image</div>
-        <div className="projects-item__description">
-          Projects Item Description
+      <section className="projects" id="projects">
+        <div className="projects-title">My Projects</div>
+        <div className="projects__project">
+          <h2 className="projects__title">Project Title</h2>
+          <div className="projects__desc">
+            <div className="projects__image">
+              <img src="https://picsum.photos/300" alt="Project Title" />
+            </div>
+            <div className="projects__details">
+              <p className="projects__description">
+                Brief description of the project, its goals, the problems it
+                solves, technologies used, etc.
+              </p>
+              <div className="projects__buttons">
+                <button href="project-url" className="projects__button">
+                  View Project
+                </button>
+                <button href="code-repository-url" className="projects__button">
+                  View Code
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="projects__icons">
+            <div className="projects__icon">
+              Project Icon 1 (e.g., technology used)
+            </div>
+            <div className="projects__icon">Project Icon 2</div>
+            <div className="projects__icon">Project Icon 3</div>
+            <div className="projects__icon">Project Icon 4</div>
+          </div>
+        </div>
+
+        <div className="projects__project">
+          <h2 className="projects__title">Project Title</h2>
+          <div className="projects__desc">
+            <div className="projects__image">
+              <img src="https://picsum.photos/300" alt="Project Title" />
+            </div>
+            <div className="projects__details">
+              <p className="projects__description">
+                Brief description of the project, its goals, the problems it
+                solves, technologies used, etc.
+              </p>
+              <div className="projects__buttons">
+                <button href="project-url" className="projects__button">
+                  View Project
+                </button>
+                <button href="code-repository-url" className="projects__button">
+                  View Code
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="projects__icons">
+            <div className="projects__icon">
+              Project Icon 1 (e.g., technology used)
+            </div>
+            <div className="projects__icon">Project Icon 2</div>
+            <div className="projects__icon">Project Icon 3</div>
+            <div className="projects__icon">Project Icon 4</div>
+          </div>
         </div>
       </section>
 
       <section id="contact" className="contact">
-        <div className="contact-form">Contact Form</div>
-        <div className="contact-details">Contact Details</div>
+        <h2 className="contact-title">My Contact</h2>
       </section>
 
       <section id="footer" className="footer">

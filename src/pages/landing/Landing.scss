@@ -1,8 +1,10 @@
+// Landing Page
 .landing {
   background-color: #e3fdfd;
   display: flex;
   flex-direction: column;
 
+  // Progress bar section
   .progress-bar {
     position: fixed;
     top: 0;
@@ -13,6 +15,7 @@
     background-color: #71c9ce;
   }
 
+  // Navabar section
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -102,6 +105,7 @@
     }
   }
 
+  // About Me Section
   .aboutme {
     display: flex;
     align-items: center;
@@ -165,17 +169,13 @@
     }
   }
 
-  .contact {
-    min-height: 100vh;
-    background-color: #a6e3e9;
-  }
-
   .footer {
     padding: 150px;
     text-align: center;
   }
 }
 
+// Education Section
 .education {
   padding: 40px;
   min-height: 100vh;
@@ -224,8 +224,123 @@
   }
 }
 
+// Projects Section
 .projects {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+
+  &-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__project {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin: 2rem 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    &:nth-child(odd) .projects__desc {
+      flex-direction: row;
+    }
+
+    &:nth-child(even) .projects__desc {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__title {
+    background-color: #334155;
+    color: #e0e7ff;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+
+  &__image {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 50%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  &__details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+
+    button {
+      background-color: #a6e3e9;
+      border: none;
+      border-radius: 5px;
+      color: black;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: #cbf1f5;
+  }
+}
+
+.contact {
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #E3FDFD;
+
+  .contact-title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
 }
 
 @keyframes slideIn {

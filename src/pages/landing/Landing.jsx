@@ -9,27 +9,7 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useSpring } from "framer-motion";
-import {
-  DiReact,
-  DiNodejsSmall,
-  DiGit,
-  DiHtml5,
-  DiCss3,
-  DiJavascript1,
-  DiDjango,
-  DiMongodb,
-  DiDocker,
-} from "react-icons/di";
-import {
-  SiExpress,
-  SiPostgresql,
-  SiFirebase,
-  SiJenkins,
-  SiJira,
-  SiSpring,
-  SiSqlite,
-  SiConfluence,
-} from "react-icons/si";
+import { DiReact, DiHtml5, DiCss3, DiJavascript1 } from "react-icons/di";
 
 const Landing = () => {
   const [showNewNavbar, setShowNewNavbar] = useState(false);
@@ -186,76 +166,89 @@ const Landing = () => {
       </section>
 
       <section className="skills" id="skills">
-        <div className="skills-title">Skills</div>
-        <div className="skills-container">
-          <div className="skills-category">
-            <div className="skills-category-title">Frontend</div>
-            <div className="skills-list">
-              <div className="skills-item">
-                <DiHtml5 /> HTML
+        <div className="skills__title">Skills</div>
+        <div className="skills__containers">
+          <div className="skills__container">
+            <div className="skills__category--top">
+              <div className="skills__category-title">
+                <h2>Frontend</h2>
               </div>
-              <div className="skills-item">
-                <DiCss3 /> CSS
-              </div>
-              <div className="skills-item">
-                <DiJavascript1 /> JavaScript
-              </div>
-              <div className="skills-item">
-                <DiReact /> React
+            </div>
+            <div className="skills__category--bottom">
+              <div className="skills__category-content">
+                <div className="skills__category-icons">
+                  <div className="icon">
+                    <DiReact size="50px" /> - <h3>React</h3>
+                  </div>
+                  <div className="icon">
+                    <DiHtml5 size="50px" /> - <h3>HTML5</h3>
+                  </div>
+                  <div className="icon">
+                    <DiCss3 size="50px" /> - <h3>CSS3</h3>
+                  </div>
+                  <div className="icon">
+                    <DiJavascript1 size="50px" /> - <h3>JavaScript</h3>
+                  </div>
+                </div>
+                <div className="skills__category-desc">
+                  <ul>
+                    <li>Experience with React, Redux, and Context API</li>
+                    <li>Strong understanding of HTML5 and CSS3</li>
+                    <li>Proficient in JavaScript and ES6+</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div className="skills-category">
-            <div className="skills-category-title">Backend</div>
-            <div className="skills-list">
-              <div className="skills-item">
-                <DiNodejsSmall /> Node.js
+
+          <div className="skills__container">
+            <div className="skills__category--top">
+              <div className="skills__category-title">
+                <h2>Frontend</h2>
               </div>
-              <div className="skills-item">
-                <SiExpress /> Express
-              </div>
-              <div className="skills-item">
-                <DiDjango /> Django
-              </div>
-              <div className="skills-item">
-                <SiSpring /> Spring
-              </div>{" "}
             </div>
-          </div>
-          <div className="skills-category">
-            <div className="skills-category-title">Databases</div>
-            <div className="skills-list">
-              <div className="skills-item">
-                <SiPostgresql /> PostgreSQL
-              </div>
-              <div className="skills-item">
-                <DiMongodb /> MongoDB
-              </div>
-              <div className="skills-item">
-                <SiSqlite /> SQLite
-              </div>
-              <div className="skills-item">
-                <SiFirebase /> Firebase
+            <div className="skills__category--bottom">
+              <div className="skills__category-content">
+                <div className="skills__category-icons">
+                  <div className="icon">
+                    <DiJavascript1 size="50px" /> - <h3>JavaScript</h3>
+                  </div>
+                </div>
+                <div className="skills__category-desc">
+                  <ul>
+                    <li>Experience with React, Redux, and Context API</li>
+                    <li>Strong understanding of HTML5 and CSS3</li>
+                    <li>Proficient in JavaScript and ES6+</li>
+                    <li>Experience with React, Redux, and Context API</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <div className="skills-category">
-            <div className="skills-category-title">Tools & Others</div>
-            <div className="skills-list">
-              <div className="skills-item">
-                <DiGit /> Git
+          <div className="skills__container">
+            <div className="skills__category--top">
+              <div className="skills__category-title">
+                <h2>Frontend</h2>
               </div>
-              <div className="skills-item">
-                <DiDocker /> Docker
-              </div>
-              <div className="skills-item">
-                <SiJenkins /> Jenkins
-              </div>
-              <div className="skills-item">
-                <SiJira /> Jira
-              </div>
-              <div className="skills-item">
-                <SiConfluence /> Confluence
+            </div>
+            <div className="skills__category--bottom">
+              <div className="skills__category-content">
+                <div className="skills__category-icons">
+
+                  <div className="icon">
+                    <DiCss3 size="50px" /> - <h3>CSS3</h3>
+                  </div>
+                  <div className="icon">
+                    <DiJavascript1 size="50px" /> - <h3>JavaScript</h3>
+                  </div>
+                </div>
+                <div className="skills__category-desc">
+                  <ul>
+                    <li>Experience with React, Redux, and Context API</li>
+                    <li>Strong understanding of HTML5 and CSS3</li>
+                    <li>Proficient in JavaScript and ES6+</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

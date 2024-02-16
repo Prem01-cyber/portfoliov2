@@ -9,6 +9,28 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useSpring } from "framer-motion";
+import {
+  DiReact,
+  DiNodejsSmall,
+  DiDatabase,
+  DiGit,
+  DiHtml5,
+  DiCss3,
+  DiJavascript1,
+  DiDjango,
+  DiMongodb,
+  DiDocker,
+} from "react-icons/di";
+import {
+  SiExpress,
+  SiPostgresql,
+  SiFirebase,
+  SiJenkins,
+  SiJira,
+  SiSpring,
+  SiSqlite,
+  SiConfluence,
+} from "react-icons/si";
 
 const Landing = () => {
   const [showNewNavbar, setShowNewNavbar] = useState(false);
@@ -89,6 +111,10 @@ const Landing = () => {
           About Me
         </a>{" "}
         |
+        <a href="#skills" onClick={navigateToSection}>
+          Skills
+        </a>{" "}
+        |
         <a href="#education" onClick={navigateToSection}>
           Education
         </a>{" "}
@@ -109,6 +135,9 @@ const Landing = () => {
         <div className="navbar-links">
           <div className="navbar-link">
             <a href="#aboutme">About Me</a>
+          </div>
+          <div className="navbar-link">
+            <a href="#skills">Skills</a>
           </div>
           <div className="navbar-link">
             <a href="#education">Education</a>
@@ -153,6 +182,83 @@ const Landing = () => {
         <div className="aboutme-content-right">
           <div className="aboutme-image">
             <img src={"https://picsum.photos/500"} alt="Your Name" />
+          </div>
+        </div>
+      </section>
+
+      <section className="skills" id="skills">
+        <div className="skills-title">Skills</div>
+        <div className="skills-container">
+          <div className="skills-category">
+            <div className="skills-category-title">Frontend</div>
+            <div className="skills-list">
+              <div className="skills-item">
+                <DiHtml5 /> HTML
+              </div>
+              <div className="skills-item">
+                <DiCss3 /> CSS
+              </div>
+              <div className="skills-item">
+                <DiJavascript1 /> JavaScript
+              </div>
+              <div className="skills-item">
+                <DiReact /> React
+              </div>
+            </div>
+          </div>
+          <div className="skills-category">
+            <div className="skills-category-title">Backend</div>
+            <div className="skills-list">
+              <div className="skills-item">
+                <DiNodejsSmall /> Node.js
+              </div>
+              <div className="skills-item">
+                <SiExpress /> Express
+              </div>
+              <div className="skills-item">
+                <DiDjango /> Django
+              </div>
+              <div className="skills-item">
+                <SiSpring /> Spring
+              </div>{" "}
+            </div>
+          </div>
+          <div className="skills-category">
+            <div className="skills-category-title">Databases</div>
+            <div className="skills-list">
+              <div className="skills-item">
+                <SiPostgresql /> PostgreSQL
+              </div>
+              <div className="skills-item">
+                <DiMongodb /> MongoDB
+              </div>
+              <div className="skills-item">
+                <SiSqlite /> SQLite
+              </div>
+              <div className="skills-item">
+                <SiFirebase /> Firebase
+              </div>
+            </div>
+          </div>
+          <div className="skills-category">
+            <div className="skills-category-title">Tools & Others</div>
+            <div className="skills-list">
+              <div className="skills-item">
+                <DiGit /> Git
+              </div>
+              <div className="skills-item">
+                <DiDocker /> Docker
+              </div>
+              <div className="skills-item">
+                <SiJenkins /> Jenkins
+              </div>
+              <div className="skills-item">
+                <SiJira /> Jira
+              </div>
+              <div className="skills-item">
+                <SiConfluence /> Confluence
+              </div>
+            </div>
           </div>
         </div>
       </section>

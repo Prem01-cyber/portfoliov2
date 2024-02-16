@@ -12,7 +12,6 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import {
   DiReact,
   DiNodejsSmall,
-  DiDatabase,
   DiGit,
   DiHtml5,
   DiCss3,

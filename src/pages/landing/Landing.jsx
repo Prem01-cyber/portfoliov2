@@ -251,7 +251,57 @@ const Landing = () => {
       </section>
 
       <section id="contact" className="contact">
-        <h2 className="contact-title">My Contact</h2>
+        <h2 className="contact-title">Get in Touch</h2>
+        <div className="contact-desc">
+          <p>
+            If you would like to get in touch with me, please fill out the form
+            below. I will get back to you as soon as possible.
+          </p>
+        </div>
+        <form className="contact-form">
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" className="form-submit">
+            Send Message
+          </button>
+        </form>
       </section>
 
       <section id="footer" className="footer">
@@ -260,6 +310,20 @@ const Landing = () => {
             &copy; 2021 Your Name. All rights reserved. Designed and developed
             by Your Name.
           </p>
+        </div>
+        <div className="footer-icons">
+          <div ref={githubRef}>
+            <FaGithubAlt size="20px" className="github-icon" />
+          </div>
+          <div ref={linkedinRef}>
+            <FaLinkedinIn size="20px" className="linkedin-icon" />
+          </div>
+          <div ref={instagramRef}>
+            <FaInstagram size="20px" className="instagram-icon" />
+          </div>
+          <div ref={twitterRef}>
+            <FaTwitter size="20px" className="twitter-icon" />
+          </div>
         </div>
       </section>
     </div>

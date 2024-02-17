@@ -1,0 +1,54 @@
+.skills-form__title {
+  color: #365486;
+  text-align: center;
+}
+
+.skills-form {
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: #0F1035;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    display: block;
+  }
+
+  input[type="text"],
+  textarea {
+    background-color: #DCF2F1;
+    border: 2px solid #365486;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border-color: #7FC7D9;
+      transition: border-color 0.3s ease-in-out;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+
+  button {
+    background-color: #0F1035;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+    align-self: center;
+
+    &:hover {
+      background-color: darken(#0F1035, 10%);
+    }
+  }
+}

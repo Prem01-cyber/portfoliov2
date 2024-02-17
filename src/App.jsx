@@ -1,6 +1,6 @@
 import "./App.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Landing, Splash } from "./pages";
+import { Landing, Splash, Data } from "./pages";
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Splash />} />
         <Route path="/landing" element={<Landing />} />
+        <Route path="/data" element={<Data />} />
       </Routes>
     </Router>
   );

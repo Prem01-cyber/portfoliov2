@@ -1,0 +1,66 @@
+.landing-form__title {
+  color: #365486;
+  text-align: center;
+}
+
+.landing-form {
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    color: #0f1035;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="url"],
+  input[type="file"] {
+    background-color: #dcf2f1;
+    border: 2px solid #365486;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    &:focus {
+      outline: none;
+      border-color: #7fc7d9;
+      transition: border-color 0.3s ease-in-out;
+    }
+  }
+
+  input[type="file"] {
+    &::file-selector-button {
+      background-color: #365486;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken(#365486, 10%);
+      }
+    }
+  }
+
+  button {
+    background-color: #0f1035;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+    align-self: center;
+
+    &:hover {
+      background-color: darken(#0f1035, 10%);
+    }
+  }
+}

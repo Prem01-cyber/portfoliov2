@@ -225,33 +225,6 @@ const Landing = () => {
               </div>
             </div>
           </div>
-          <div className="skills__container">
-            <div className="skills__category--top">
-              <div className="skills__category-title">
-                <h2>Frontend</h2>
-              </div>
-            </div>
-            <div className="skills__category--bottom">
-              <div className="skills__category-content">
-                <div className="skills__category-icons">
-
-                  <div className="icon">
-                    <DiCss3 size="50px" /> - <h3>CSS3</h3>
-                  </div>
-                  <div className="icon">
-                    <DiJavascript1 size="50px" /> - <h3>JavaScript</h3>
-                  </div>
-                </div>
-                <div className="skills__category-desc">
-                  <ul>
-                    <li>Experience with React, Redux, and Context API</li>
-                    <li>Strong understanding of HTML5 and CSS3</li>
-                    <li>Proficient in JavaScript and ES6+</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -289,7 +262,7 @@ const Landing = () => {
           <h2 className="projects__title">Project Title</h2>
           <div className="projects__desc">
             <div className="projects__image">
-              <img src="https://picsum.photos/300" alt="Project Title" />
+              <img src="https://picsum.photos/30" alt="Project Title" />
             </div>
             <div className="projects__details">
               <p className="projects__description">
@@ -408,20 +381,6 @@ const Landing = () => {
             &copy; 2021 Your Name. All rights reserved. Designed and developed
             by Your Name.
           </p>
-        </div>
-        <div className="footer-icons">
-          <div ref={githubRef}>
-            <FaGithubAlt size="20px" className="github-icon" />
-          </div>
-          <div ref={linkedinRef}>
-            <FaLinkedinIn size="20px" className="linkedin-icon" />
-          </div>
-          <div ref={instagramRef}>
-            <FaInstagram size="20px" className="instagram-icon" />
-          </div>
-          <div ref={twitterRef}>
-            <FaTwitter size="20px" className="twitter-icon" />
-          </div>
         </div>
       </section>
     </div>

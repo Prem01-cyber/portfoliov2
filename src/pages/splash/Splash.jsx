@@ -122,7 +122,7 @@ const Splash = () => {
     const startPoint = { x: "50%", y: "50%" };
 
     svgElements.forEach((el, index) => {
-      const duration = 0.7 + index * 0.1;
+      const duration = 1.3 + index * 0.1;
       const delay = index * 0.1;
 
       gsap.set(el, {
@@ -158,6 +158,8 @@ const Splash = () => {
     return () => {
       tl.kill();
     };
+
+    // eslint-disable-next-line
   }, []);
 
   const svgComponents = svgs.map((SvgComponent, index) => (

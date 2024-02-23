@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./EducationForm.scss";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../../firebase-config";
 
 const EducationForm = () => {
   const [educationEntries, setEducationEntries] = useState([
@@ -10,6 +12,15 @@ const EducationForm = () => {
     const newEntries = [...educationEntries];
     newEntries[index][event.target.name] = event.target.value;
     setEducationEntries(newEntries);
+  };
+
+  const addEducationEntryToFirestore = async (newEntry) => {
+    try {
+      const docRef = await addDoc(collection(db, "educationEntries"), newEntry);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
   const addEducationEntry = () => {
@@ -27,7 +38,10 @@ const EducationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Education Entries:", educationEntries);
+
+    educationEntries.forEach((entry) => {
+      addEducationEntryToFirestore(entry);
+    });
   };
 
   return (
